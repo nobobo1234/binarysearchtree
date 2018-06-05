@@ -15,3 +15,18 @@ class Node:
                 self.right = node
             else:
                 self.right.add_node(node)
+
+    def visit(self):
+        if self.left is not None:
+            self.left.visit()
+        print(self.value)
+        if self.right is not None:
+            self.right.visit()
+
+    def search(self, value):
+        if self.value is value:
+            return self
+        elif value < self.value and self.left is not None:
+            return self.left.search(value)
+        elif value > self.value and self.right is not None:
+            return self.right.search(value)

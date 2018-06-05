@@ -14,3 +14,9 @@ class Tree:
     def add_value(self, value):
         node = Node(value)
         self.add_node(node)
+
+    def traverse(self):
+        self.root.visit()
+
+    def search(self, value):
+        return self.root.search(value)

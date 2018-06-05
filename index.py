@@ -1,8 +1,16 @@
 from tree import Tree
+from random import randint
 
 tree = Tree()
-tree.add_value(5)
-tree.add_value(3)
-tree.add_value(7)
-tree.add_value(6)
-print(tree)
+
+for i in range(0, 10):
+    tree.add_value(randint(0, 100))
+
+tree.traverse()
+
+search = input('What value do you want to find?')
+result = tree.search(int(search))
+if result is not None:
+    print('Found:', result)
+else:
+    print(search + ' not found :(')
